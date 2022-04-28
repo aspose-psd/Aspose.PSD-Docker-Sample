@@ -12,10 +12,10 @@ RUN yes | apt-get install -y libc6-dev
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
 WORKDIR /src
-COPY ["AsposePsdDockerSample/AsposePsdDockerSample.csproj", "AsposePsdDockerSample/"]
-RUN dotnet restore "AsposePsdDockerSample/AsposePsdDockerSample.csproj"
+COPY ["AsposePsdDockerSample.csproj", ""]
+RUN dotnet restore "AsposePsdDockerSample.csproj"
 COPY . .
-WORKDIR "/src/AsposePsdDockerSample"
+WORKDIR "/src"
 RUN dotnet build "AsposePsdDockerSample.csproj" -c Release -o /app/build
 
 FROM build AS publish

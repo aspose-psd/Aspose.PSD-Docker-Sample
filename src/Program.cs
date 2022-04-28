@@ -15,6 +15,11 @@ namespace AsposePsdDockerSample
     {
         static void Main(string[] args)
         {
+            // Fix of the unsupported System.Drawing.Common lib on OS X and .NET6.
+            // This is temporary action. Later system.drawing will be replaced by Aspose.Drawing
+            // Details: https://aka.ms/systemdrawingnonwindows
+            System.AppContext.SetSwitch("System.Drawing.EnableUnixSupport", true);
+
             // If you want to update text, this value shoud be true, but in this case you will need the License.
             // You can get the temporary license using this article: https://purchase.aspose.com/temporary-license
             // Also, if you need text editing under the linux, please add to the dockerfile the following comannds
@@ -31,7 +36,6 @@ namespace AsposePsdDockerSample
                 var license = new License();                
                 license.SetLicense(@"Aspose.PSD.NET.lic");
             }
-
 
             // If you want to use Blending Effects, please specify the following options:
             var options = new PsdLoadOptions() { LoadEffectsResource = true };
