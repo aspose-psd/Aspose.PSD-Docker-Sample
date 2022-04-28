@@ -5,6 +5,10 @@ This repository demonstrate the ability to use Aspose.PSD in the docker containe
 
 Please read the annotations carefully in source code.
 
+This sample demonstrates only simple ways to edit PSD File. Please find more at https://docs.aspose.com/psd/net/
+We use .net 6 console app to show docker support, but this dockerizing can be applied to the ASP .Net Apps
+
+
 ## Dockerfile
 ```docker
 # See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
