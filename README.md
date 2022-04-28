@@ -1,13 +1,13 @@
 # Aspose.PSD-Docker-Sample
 Aspose.PSD Docker Sample
 
-This repository demonstrate ability to use Aspose.PSD in the docker container under the Linux.
+This repository demonstrate the ability to use Aspose.PSD in the docker container under the Linux.
 
-Please read the annotations carefully.
+Please read the annotations carefully in source code.
 
 ## Dockerfile
- ```
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+```docker
+# See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
 FROM mcr.microsoft.com/dotnet/runtime:6.0 AS base
 WORKDIR /app
@@ -34,13 +34,13 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "AsposePsdDockerSample.dll"]
- ```
+```
  
 ## Examples of the some apps that can be made with Aspose.PSD
 - PSD & PSB Viewer: https://products.aspose.app/psd/viewer
 - Image Format Conversion utility: https://products.aspose.app/psd/conversion
 - Extracting of the Layers Data (For HTML design, for example): https://products.aspose.app/psd/extract
-- Compression of PSD file using undocumented features of PSD Format: https://products.aspose.app/psd/compress
+- Compression of PSD files using undocumented features: https://products.aspose.app/psd/compress
 - Watermarking of the PSD Files: https://products.aspose.app/psd/watermark
 - Merging severall images to one PSD File: https://products.aspose.app/psd/merger
 - Fast portolio creation: https://products.aspose.app/psd/create-portfolio
